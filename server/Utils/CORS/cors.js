@@ -8,7 +8,7 @@
 
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://frontendmain-git-master-jugalnoobs-projects.vercel.app"
+  "https://frontendmain-five.vercel.app"
 ];
 
 export const corsOptions = {
