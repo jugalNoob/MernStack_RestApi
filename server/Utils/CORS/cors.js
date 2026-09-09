@@ -4,11 +4,10 @@
 //   methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD"],
 // };
 
-
-
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://frontendmain-five.vercel.app"
+  "https://frontendmain-five.vercel.app",
+  "https://frontendmain-git-master-jugalnoobs-projects.vercel.app"
 ];
 
 export const corsOptions = {
@@ -16,11 +15,13 @@ export const corsOptions = {
     if (!origin || allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
-      callback(new Error("Not allowed by CORS"));
+      callback(new Error(`Not allowed by CORS: ${origin}`));
     }
   },
 
   credentials: true,
 
-  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD"]
+  methods: ["GET", "POST", "PUT", "DELETE", "PATCH", "HEAD"],
+
+  allowedHeaders: ["Content-Type", "Authorization"]
 };
